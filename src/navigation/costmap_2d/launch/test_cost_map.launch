@@ -1,0 +1,16 @@
+<launch>
+  <!-- 
+  NOTE: You'll need to bring up something that publishes sensor data (see
+  rosstage), something that publishes a map (see map_server), and something to
+  visualize a costmap (see nav_view), to see things work.
+  -->
+
+  <!-- Run the costmap node -->
+  <node name="costmap_node" pkg="costmap_2d" type="costmap_2d_node" >
+    <rosparam file="$(find costmap_2d)/launch/costmap_common_params.yaml" command="load" ns="global_costmap" />
+    <rosparam file="$(find costmap_2d)/launch/costmap_common_params.yaml" command="load" ns="local_costmap" />
+    <rosparam file="$(find costmap_2d)/launch/local_costmap_params.yaml" command="load" />
+    <rosparam file="$(find costmap_2d)/launch/global_costmap_params.yaml" command="load" />
+  </node>
+
+</launch>
