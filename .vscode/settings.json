@@ -1,0 +1,11 @@
+{
+    "cmake.sourceDirectory": "/home/cona/nav_ws_jh/src/navigation/clear_costmap_recovery",
+    "python.autoComplete.extraPaths": [
+        "/home/cona/proj-planner/nav_ws_jh/devel/lib/python3/dist-packages",
+        "/opt/ros/noetic/lib/python3/dist-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/cona/proj-planner/nav_ws_jh/devel/lib/python3/dist-packages",
+        "/opt/ros/noetic/lib/python3/dist-packages"
+    ]
+}

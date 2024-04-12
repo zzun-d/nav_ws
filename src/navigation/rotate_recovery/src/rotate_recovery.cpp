@@ -175,7 +175,7 @@ void RotateRecovery::runBehavior()
     cmd_vel.linear.y = 0.0;
     cmd_vel.angular.z = vel;
 
-    vel_pub.publish(cmd_vel);
+    // vel_pub.publish(cmd_vel);
 
     r.sleep();
   }

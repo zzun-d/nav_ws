@@ -50,21 +50,6 @@
 #include <pluginlib/class_loader.hpp>
 #include <tf2/LinearMath/Transform.h>
 
-class SuperValue : public XmlRpc::XmlRpcValue
-{
-public:
-  void setStruct(XmlRpc::XmlRpcValue::ValueStruct* a)
-  {
-    _type = TypeStruct;
-    _value.asStruct = new XmlRpc::XmlRpcValue::ValueStruct(*a);
-  }
-  void setArray(XmlRpc::XmlRpcValue::ValueArray* a)
-  {
-    _type = TypeArray;
-    _value.asArray = new std::vector<XmlRpc::XmlRpcValue>(*a);
-  }
-};
-
 namespace costmap_2d
 {
 
@@ -251,7 +236,6 @@ private:
   void readFootprintFromConfig(const costmap_2d::Costmap2DConfig &new_config,
                                const costmap_2d::Costmap2DConfig &old_config);
 
-  void loadOldParameters(ros::NodeHandle& nh);
   void warnForOldParameters(ros::NodeHandle& nh);
   void checkOldParam(ros::NodeHandle& nh, const std::string &param_name);
   void copyParentParameters(const std::string& plugin_name, const std::string& plugin_type, ros::NodeHandle& nh);
