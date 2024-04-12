@@ -1,0 +1,11 @@
+<launch>
+
+  <node pkg="fake_cona" type="fake_cona_node" respawn="false" name="fake_cona" output="screen">
+    <rosparam file="$(find fake_cona)/launch/costmap_common_params.yaml" command="load" ns="global_costmap" />
+    <!-- <rosparam file="$(find fake_cona)/launch/costmap_common_params.yaml" command="load" ns="local_costmap" /> -->
+    <rosparam file="$(find fake_cona)/launch/global_costmap_params.yaml" command="load" />
+    <!-- <rosparam file="$(find fake_cona)/launch/local_costmap_params.yaml" command="load" /> -->
+    <!-- <rosparam file="$(find fake_cona)/base_local_planner_params.yaml" command="load" /> -->
+  </node>
+
+</launch>

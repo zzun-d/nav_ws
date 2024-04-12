@@ -111,12 +111,7 @@ Costmap2DROS::Costmap2DROS(const std::string& name, tf2_ros::Buffer& tf) :
 
   layered_costmap_ = new LayeredCostmap(global_frame_, rolling_window, track_unknown_space);
 
-  if (!private_nh.hasParam("plugins"))
-  {
-    loadOldParameters(private_nh);
-  } else {
-    warnForOldParameters(private_nh);
-  }
+  warnForOldParameters(private_nh);
 
   if (private_nh.hasParam("plugins"))
   {
